@@ -25,7 +25,7 @@ class Settings:
 
     # ─── Retrieval ──────────────────────────────────────────────
     default_top_k: int = 4
-    min_similarity_threshold: float = 0.20
+    min_similarity_threshold: float = 0.05
 
     # ─── Generation ─────────────────────────────────────────────
     max_context_chunks: int = 5

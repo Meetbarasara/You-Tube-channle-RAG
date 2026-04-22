@@ -113,16 +113,37 @@ st.markdown("""
   .score-med  { color: #fbbf24; font-weight: 600; }
   .score-low  { color: #f87171; font-weight: 600; }
 
-  /* ── Input ── */
-  .stTextInput > div > div > input {
-    background: rgba(255,255,255,0.05) !important;
-    border: 1px solid rgba(255,255,255,0.12) !important;
-    color: #e2e8f0 !important; border-radius: 10px !important;
+  /* ── Input — aggressive selectors for Streamlit 1.56+ ── */
+  input[type="text"], input[type="search"], textarea,
+  .stTextInput input, .stTextInput textarea,
+  [data-testid="stTextInput"] input,
+  [data-baseweb="input"] input,
+  [data-baseweb="base-input"] input {
+    background: rgba(20, 20, 40, 0.85) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    color: #e2e8f0 !important;
+    caret-color: #a78bfa !important;
+    border-radius: 10px !important;
     padding: 0.65rem 1rem !important;
+    -webkit-text-fill-color: #e2e8f0 !important;
   }
-  .stTextInput > div > div > input:focus {
-    border-color: rgba(167,139,250,0.5) !important;
+  input[type="text"]:focus, input[type="search"]:focus,
+  [data-baseweb="input"] input:focus,
+  [data-baseweb="base-input"] input:focus {
+    border-color: rgba(167,139,250,0.6) !important;
     box-shadow: 0 0 0 3px rgba(167,139,250,0.15) !important;
+    outline: none !important;
+  }
+  input::placeholder,
+  [data-baseweb="input"] input::placeholder {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+  }
+  /* Base input wrapper background */
+  [data-baseweb="input"],
+  [data-baseweb="base-input"] {
+    background: rgba(20, 20, 40, 0.85) !important;
+    border-radius: 10px !important;
   }
 
   /* ── Buttons ── */
