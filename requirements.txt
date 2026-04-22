@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+streamlit
+openai
+youtube-transcript-api
+yt-dlp
+langchain-text-splitters
+langchain-core
+numpy
+python-dotenv
+requests
+# Optional: RAGAS evaluation endpoint
+# ragas
+# datasets
+# langchain-openai
